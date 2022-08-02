@@ -1,0 +1,39 @@
+<style>
+    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+    tr:nth-child(even) { background-color: #dddddd; }
+    .post-id{width:2%} .post-name{width:20%}.post-description{width:15%}.post-image{width:20%}.post-status{width:25%}.post-delete{width:10%}
+    .table_main{text-align: center;}.post-short_description{width:10%}
+    .button {
+        transition-duration: 0.4s;
+    }
+
+    .button:hover {
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+</style>
+<body>
+
+<form action="<?=$block->getUrl('banner/index/adddata') ?> " method="post">
+
+    <table>
+        <tr>
+            <label for="lname">Status</label>
+            <input type="text"  name="status"><br><br>
+            <label for="fname">Description</label>
+            <input type="text"  name="description"><br><br>
+            <label for="fname">Image</label>
+            <input type="text"  name="image"><br><br>
+            <label for="fname">Short Description</label>
+            <input type="text"  name="short"><br><br>
+            <input type="submit" value="Submit">
+
+        </tr>
+    </table>
+</form>
+
+<form action="<?=$block->getUrl('banner/index/index') ?> " method="post">
+    <input type="submit" value="TURN BACK">
+</form>
+</body>

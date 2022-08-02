@@ -1,0 +1,13 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="new_banner">
+        <column xsi:type="int" name="newbanner_id" identity="true" padding="10" unsigned="true" nullable="false" comment="newbanner_id"/>
+        <column xsi:type="varchar" name="name"  comment="name" nullable="false" length="128"/>
+        <column xsi:type="varchar" name="image"  comment="image" nullable="false" length="128"/>
+        <column xsi:type="varchar" name="description"  comment="description" nullable="false" length="128"/>
+        <column xsi:type="varchar" name="status"  comment="status" nullable="false" length="128"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="newbanner_id" />
+        </constraint>
+    </table>
+</schema>

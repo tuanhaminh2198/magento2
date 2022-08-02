@@ -1,0 +1,19 @@
+<?php
+namespace Dev\Banner\Console\Command;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Dev\Banner\Model\ItemFactory;
+use Magento\Framework\Console\Cli;
+
+class AddItem extends Command{
+        const INPUT_KEY_NAME = 'NAME';
+        const INPUT_KEY_DESCRIPTION ='DESCRIPTION';
+        private $itemFactory;
+            public function __construct(ItemFactory $itemFactory)
+            {
+                $this -> itemFatory =$itemFactory;
+                parent::__construct();
+            }
+}

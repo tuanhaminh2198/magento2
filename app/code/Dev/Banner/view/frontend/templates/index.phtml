@@ -1,0 +1,50 @@
+<?php/**
+* @var \Dev\Banner\Block\Index $block
+*/?>
+<?= $block -> getTitle();?>
+<h2 class="table_main">Bảng dữ liệu </h2>
+
+
+<style>
+    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+    tr:nth-child(even) { background-color: #dddddd; }
+    .post-id{width:2%} .post-name{width:20%}.post-description{width:15%}.post-image{width:20%}.post-status{width:25%}.post-delete{width:10%}
+    .table_main{text-align: center;}.post-short_description{width:10%}
+    .button {
+        transition-duration: 0.4s;
+    }
+
+    .button:hover {
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+</style>
+<table>
+    <form action="<?=$block->getUrl('banner/index/addhandle') ?> " method="post">
+        <input type="submit" value="ADD ">
+    </form>
+    <tr>
+        <th class="post-id">Id</th>
+        <th class="post-name">Name</th>
+        <th class="post-description">Description </th>
+        <th class="Dev\Banner\Ui\Component\Category\Listing\Column\Thumbnail">Image </th>
+        <th class="post-status">Status </th>
+        <th class="post-short_description">Short Description </th>
+        <th class="post-short_description">DELETE</th>
+
+    </tr>
+    <?php foreach ($block->getPostCollection() as $key=>$post) :?>
+
+        <tr>
+            <td><?= $post->getBannerId();?></td>
+            <td><?= $post->getName();?></td>
+            <td><?= $post->getDescription();?></td>
+            <td><?= $post->getImage();?></td>
+            <td><?= $post->getStatus();?></td>
+            <td><?= $post->getShort_description();?>
+            </td>
+            <td><a onclick="return confirm('Are you sure to delete it')" href="<?=$block->getUrl('banner/index/delete',['id'=>$post->getId()]) ?>">DELETE</a></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
