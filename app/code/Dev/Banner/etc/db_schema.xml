@@ -1,14 +1,23 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
        <table name="banner">
-          <column xsi:type="int" name="banner_id" identity="true" unsigned="true" nullable="false" comment="banner_id"/>
-          <column xsi:type="varchar" name="name"  comment="name"/>
-          <column xsi:type="varchar" name="description" length="255" comment="description"/>
-          <column xsi:type="varchar" name="image"  length="1000" comment="image"/>
-           <column xsi:type="varchar" name="file"   comment="file"/>
-          <column xsi:type="varchar" name="status" comment="status"/>
-          <constraint xsi:type="primary" referenceId="PRIMARY">
-               <column name="banner_id"/>
-          </constraint>
+           <column xsi:type="int" name="banner_id" identity="true" unsigned="true" nullable="false" comment="banner_id"/>
+           <column xsi:type="varchar" name="name"  comment="name"/>
+           <column xsi:type="varchar" name="description" length="255" comment="description"/>
+           <column xsi:type="varchar" name="image"  length="255" comment="image"/>
+           <column xsi:type="varchar" name="image_url"  length="255" comment="image_url"/>
+           <column xsi:type="varchar" name="image_name"  length="255" comment="image_name"/>
+           <column xsi:type="varchar" name="file"   length="255" comment="file"/>
+           <column xsi:type="varchar" name="position_image"   comment="position_image"/>
+           <column xsi:type="boolean" name="status_image" comment="status_image"/>
+           <column xsi:type="varchar" name="date"   length="255" comment="date"/>
+           <constraint xsi:type="primary" referenceId="PRIMARY">
+                    <column name="banner_id"/>
+           </constraint>
+           <index referenceId="banner_name_description" indexType="fulltext">
+               <column name="name"/>
+               <column name="description"/>
+           </index>
        </table>
+
 </schema>

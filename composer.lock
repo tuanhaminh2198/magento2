@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "914087e512af6a559a7895d6310b69a6",
+    "content-hash": "227c2c62a6fea1e949dc44d8238a666f",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -1456,6 +1456,45 @@
                 }
             ],
             "time": "2022-05-10T07:25:08+00:00"
+        },
+        {
+            "name": "experius/module-donationproduct",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/experius/Magento-2-Module-Experius-DonationProduct.git",
+                "reference": "96d41132f1ca504c8b5707d17bc2a92419ff8000"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/experius/Magento-2-Module-Experius-DonationProduct/zipball/96d41132f1ca504c8b5707d17bc2a92419ff8000",
+                "reference": "96d41132f1ca504c8b5707d17bc2a92419ff8000",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Experius\\DonationProduct\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Derrick Heesbeen",
+                    "email": "derrick@experius.nl"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/experius/Magento-2-Module-Experius-DonationProduct/issues",
+                "source": "https://github.com/experius/Magento-2-Module-Experius-DonationProduct/tree/1.0.6"
+            },
+            "time": "2017-12-22T15:46:45+00:00"
         },
         {
             "name": "ezimuel/guzzlestreams",
@@ -26236,7 +26275,9 @@
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-json": "*"
+    },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

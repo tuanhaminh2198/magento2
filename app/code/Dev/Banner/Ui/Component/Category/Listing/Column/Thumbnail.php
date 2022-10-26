@@ -55,26 +55,21 @@ class Thumbnail extends Column
     {
         if (isset($dataSource['data']['items'])) {
             $fieldName = $this->getData('name');
-
+// lay anh tu image_url
             foreach ($dataSource['data']['items'] as &$item) {
-//                var_dump(json_decode($item['image'],true)[0]['name']);
-//                die();
-
                 $url = '';
                 if (isset($item[$fieldName])) {
                     if ($item[$fieldName] != '') {
                         $url = $this->storeManager->getStore()->getBaseUrl(
                                 \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
-                            ) . "banner/tmp/image/" . json_decode($item['image'],true)[0]['name'];
+                            ) .$item[$fieldName];
 
                     } else {
                         $url = $this->imageHelper->getDefaultPlaceholderUrl('image');
                     }
-
                 } else {
                     $url = $this->imageHelper->getDefaultPlaceholderUrl('image');
                 }
-//                var_dump($url);die();
                 $item[$fieldName . '_src'] = $url;
                 $item[$fieldName . '_alt'] = $this->getAlt($item) ?: '';
                 $item[$fieldName . '_orig_src'] = $url;

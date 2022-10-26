@@ -67,6 +67,8 @@ $eavSetup->addAttribute(
 'apply_to' => 'simple,configurable,virtual,bundle,downloadable,grouped'
 ]
 );
+
 $setup->endSetup();
 }
 }
+

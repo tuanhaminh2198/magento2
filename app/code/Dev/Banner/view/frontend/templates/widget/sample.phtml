@@ -1,12 +1,15 @@
 <?php/**
  * @var \Dev\Banner\Block\Sample $block
  */?>
-<button id="sample">
+<button id="sample" class="float-left submit-button" > <?= $block->getData('title') ?></button>
 
-    <?= $block->getData('title') ?>
-</button>
+<script type="text/javascript">
+    document.getElementById("sample").onclick = function () {
+        location.href = "http://example.com/banner/index/index";
+    };
+</script>
 
-<style>
+<style >
     #sample {
         border-radius: 5px;
         width: <?= $block->getData('width') ?>;

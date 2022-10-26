@@ -1,5 +1,48 @@
-<?xml version="1.0" ?>
-<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="dev_banner_manager" class="Dev\Banner\Block\TopBannerWidget">
+        <label translate="true">Banner Widget</label>
+
+        <description translate="true">Display Banner</description>
+
+        <parameters>
+            <parameter name="auto" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Automatically transition</label>
+            </parameter>
+
+            <parameter name="pager" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display pager</label>
+            </parameter>
+
+            <parameter name="speed" xsi:type="text" visible="true">
+                <label translate="true">Slide transition duration (in ms)</label>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="dev_banner_manager1" class="Dev\Banner\Block\BottomBannerWidget">
+        <label translate="true">Bottom Banner Widget</label>
+
+        <description translate="true">Display Banner</description>
+
+        <parameters>
+            <parameter name="auto" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Automatically transition</label>
+            </parameter>
+
+            <parameter name="pager" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display pager</label>
+            </parameter>
+
+            <parameter name="speed" xsi:type="text" visible="true">
+                <label translate="true">Slide transition duration (in ms)</label>
+            </parameter>
+        </parameters>
+    </widget>
     <widget class="Dev\Banner\Block\Sample" id="banner_widget_sample">
         <label>Button</label>
         <description>Thêm button</description>
@@ -19,3 +62,7 @@
         </parameters>
     </widget>
 </widgets>
+
+
+
+

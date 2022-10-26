@@ -46,11 +46,11 @@ class Actions extends Column
                     'add' => [
                         'href' => 'add',
                         'label' => __('Add')
+
                     ],
                 ];
             }
         }
-
         return $dataSource;
     }
 }

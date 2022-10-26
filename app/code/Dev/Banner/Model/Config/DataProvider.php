@@ -1,43 +1,4 @@
 <?php
-//
-//namespace Dev\Banner\Model\Config;
-//
-//use Dev\Banner\Model\PostFactory;
-//use Dev\Banner\Model\ResourceModel\Post\CollectionFactory;
-//
-//class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
-//{
-//    protected $_loadedData;
-//    protected $collection;
-//
-//    public function __construct(
-//        $name,
-//        $primaryFieldName,
-//        $requestFieldName,
-//        CollectionFactory $collectionFactory,
-//        array $meta = [],
-//        array $data = []
-//    )
-//    {
-//        $this->collection = $collectionFactory->create();
-//        parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
-//    }
-//
-//    public function getData()
-//    {
-//        if (isset($this->_loadedData)) {
-//            return $this->_loadedData;
-//        }
-//        $items = $this->collection->getItems();
-//        foreach ($items as $item) {
-//            $this->_loadedData[$item->getId()] = $item->getData();
-//        }
-//        return $this->_loadedData;
-//    }
-//}
-
-
-
 namespace Dev\Banner\Model\Config;
 
 use Dev\Banner\Model\ResourceModel\Post\CollectionFactory;
@@ -86,19 +47,16 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         foreach ($items as $item) {
             $data = $item->getData();
             if(isset($data['image'])){
-                $imageData = json_decode($data['image'],true);
                 $data['image'] = [
                     [
-                        'name' => $imageData[0]['name'],
-                        'url' => $url.$imageData[0]['url'],
-                        'previewType' => $imageData[0]['previewType'],
-                        'id' => $imageData[0]['id'],
-                        'size' => $imageData[0]['size']
+                        'name' => $data['image_name'],
+                        'url' => $url.$data['image_url'],
                     ]
                 ];
             }
             $this->_loadedData[$item->getId()] = $data;
         }
+
         return $this->_loadedData;
     }
 }

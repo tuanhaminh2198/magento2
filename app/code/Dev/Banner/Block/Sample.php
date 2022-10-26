@@ -9,3 +9,4 @@ class Sample extends Template implements BlockInterface
 {
     protected $_template = "widget/sample.phtml";
 }
+

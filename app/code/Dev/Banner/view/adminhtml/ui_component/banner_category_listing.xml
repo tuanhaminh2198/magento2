@@ -16,7 +16,7 @@
             </button>
         </buttons>
     </settings>
-    <dataSource name="nameOfDataSource">
+    <dataSource name="banner_post_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
             <argument name="name" xsi:type="string">banner_post_listing_data_source</argument>
@@ -57,7 +57,7 @@
                         <item name="url" xsi:type="url" path="banner/category/massdelete"/>
                         <item name="confirm" xsi:type="array">
                             <item name="title" xsi:type="string" translate="true">Delete Row</item>
-                            <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you want to delete selected items?</item>
                         </item>
                     </item>
                 </argument>
@@ -95,19 +95,19 @@
                 </item>
             </argument>
         </selectionsColumn>
-        <column name="banner_id">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">textRange</item>
-                    <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">ID</item>
-                </item>
-            </argument>
-        </column>
+<!--        <column name="banner_id">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="filter" xsi:type="string">textRange</item>-->
+<!--                    <item name="sorting" xsi:type="string">asc</item>-->
+<!--                    <item name="label" xsi:type="string" translate="true">ID</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </column>-->
         <column name="name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
+<!--                    <item name="filter" xsi:type="string">text</item>-->
                     <item name="editor" xsi:type="array">
                         <item name="editorType" xsi:type="string">text</item>
                         <item name="validation" xsi:type="array">
@@ -118,34 +118,6 @@
                 </item>
             </argument>
         </column>
-        <column name="status">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="editor" xsi:type="array">
-                        <item name="editorType" xsi:type="string">text</item>
-                        <item name="validation" xsi:type="array">
-                            <item name="required-entry" xsi:type="boolean">true</item>
-                        </item>
-                    </item>
-                    <item name="label" xsi:type="string" translate="true">status</item>
-                </item>
-            </argument>
-        </column>
-        <column name="file">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="editor" xsi:type="array">
-                        <item name="editorType" xsi:type="string">text</item>
-                        <item name="validation" xsi:type="array">
-                            <item name="required-entry" xsi:type="boolean">true</item>
-                        </item>
-                    </item>
-                    <item name="label" xsi:type="string" translate="true">File</item>
-                </item>
-            </argument>
-        </column>
         <column name="description">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -153,14 +125,33 @@
                     <item name="editor" xsi:type="array">
                         <item name="editorType" xsi:type="string">text</item>
                         <item name="validation" xsi:type="array">
-                            <item name="required-entry" xsi:type="boolean">true</item>
+                            <item name="required-entry" xsi:type="boolean">false</item>
                         </item>
                     </item>
                     <item name="label" xsi:type="string" translate="true">description</item>
                 </item>
             </argument>
         </column>
-        <column name="image" component="Magento_Ui/js/grid/columns/thumbnail" class="Dev\Banner\Ui\Component\Category\Listing\Column\Thumbnail">
+        <column name="date"  component="Magento_Ui/js/grid/columns/date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                    <item name="label" xsi:type="string" translate="true">date</item>
+                </item>
+            </argument>
+            <settings>
+<!--                <filter>dateRange</filter>-->
+                <dataType>date</dataType>
+                <dateFormat>   dd, [tháng] MM, [năm] y</dateFormat>
+            </settings>
+        </column>
+        <column name="image_url" component="Magento_Ui/js/grid/columns/thumbnail" class="Dev\Banner\Ui\Component\Category\Listing\Column\Thumbnail">
             <settings>
                 <label translate="true">Thumbnail</label>
                 <hasPreview>1</hasPreview>
@@ -181,7 +172,28 @@
                 </item>
             </argument>
         </column>
-
+        <column name="status_image" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <options class="Dev\Banner\Model\Config\StatusImage"/>
+                <filter>select</filter>
+                <editor>
+                    <editorType>select</editorType>
+                </editor>
+                <dataType>select</dataType>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+        <column name="position_image"  component="Magento_Ui/js/grid/columns/select" sortOrder="23">
+            <settings>
+                <options class="Dev\Banner\Ui\Component\Category\Listing\Column\PositionBanner"/>
+                <filter>select</filter>
+                <editor>
+                    <editorType>select</editorType>
+                </editor>
+                <dataType>select</dataType>
+                <label translate="true">Position Banner</label>
+            </settings>
+        </column>
     <actionsColumn name="actions" class="Dev\Banner\Ui\Component\Category\Listing\Column\Actions" sortOrder="200">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
@@ -191,8 +203,5 @@
             </item>
         </argument>
     </actionsColumn>
-
-
     </columns>
-
 </listing>

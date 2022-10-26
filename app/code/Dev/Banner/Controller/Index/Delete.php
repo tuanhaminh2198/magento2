@@ -26,8 +26,6 @@ class Delete extends Action
         try {
             $id = $this->getRequest()->getParam('id');
             if ($id) {
-
-
                 $model = $this->extensionFactory->create()->load($id);
                 $model->delete();
                 $this->messageManager->addSuccessMessage(__("Record Delete Successfully."));
