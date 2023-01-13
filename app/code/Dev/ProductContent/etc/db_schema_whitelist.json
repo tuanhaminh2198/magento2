@@ -1,0 +1,30 @@
+{
+    "product_content": {
+        "column": {
+            "product_content_id": true,
+            "product_sku": true,
+            "content": true,
+            "product_id": true,
+            "product_name": true,
+            "display_area": true,
+            "status": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "product_content_temporary": {
+        "column": {
+            "product_content_id_temporary": true,
+            "product_sku_temporary": true,
+            "content_temporary": true,
+            "product_id_temporary": true,
+            "product_name_temporary": true,
+            "display_area_temporary": true,
+            "status_temporary": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

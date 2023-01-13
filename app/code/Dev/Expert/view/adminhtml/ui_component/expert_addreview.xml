@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">expert_addreview.expert_review_post_listing_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Insert </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <namespace>expert_addreview</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>expert_addreview.expert_review_post_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="expert_review_post_listing_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <dataProvider class="Dev\Expert\Model\Config\DataProviderExpert" name="expert_review_post_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>expert_review_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="fields" sortOrder="30">
+        <settings>
+            <label translate="true">Expert Review</label>
+        </settings>
+        <field name="reviewer" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">REVIEWER</label>
+            </settings>
+        </field>
+        <field name="review_title" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">REVIEW TITLE</label>
+            </settings>
+        </field>
+        <field name="review_detail" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">REVIEW DETAIL</label>
+            </settings>
+        </field>
+        <field name="review_video" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">REVIEW VIDEO</label>
+            </settings>
+        </field>
+    </fieldset>
+</form>

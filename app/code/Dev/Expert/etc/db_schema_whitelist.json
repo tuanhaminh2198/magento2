@@ -1,0 +1,19 @@
+{
+    "expert": {
+        "column": {
+            "expert_id": true,
+            "name": true,
+            "position": true,
+            "name_company": true,
+            "image": true,
+            "image_url": true,
+            "image_name": true
+        },
+        "index": {
+            "EXPERT_NAME_POSITION": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('Dev_Banner::css/jquery.bxslider.css') ?>"/>
+
+<ul class="bxslider1">
+    <?php
+    $dataBannerBottom = $block->dataBannerBottom();
+    $data=$dataBannerBottom['data'];
+    //    $auto = $this->getData('auto') ? "true" : "false";
+    $auto = true;
+    //    $pager = $this->getData('pager') ? "true" : "false";
+    $pager = true;
+    //    $speed = intval($this->getData('speed'));
+    $speed = intval(100);
+
+    foreach ($data as $d) {
+        ?>
+        <li>
+            <a href="<?php echo $d['image_name'] ?>">
+                <img src="<?php echo $this->getData('mediaURL') .  $d['image_name']; ?>"/>
+            </a>
+        </li>
+        <?php
+    }
+    //    var_dump($this->getData('mediaURL') .  $d['image_name']);
+    //    die();
+    ?>
+</ul>
+<script>
+    require(['jquery', 'bxslider'], function ($) {
+        $(function () {
+            $('.bxslider1').bxSlider({
+                auto: <?php echo $auto ?>,
+                pager: <?php echo $pager ?>,
+                speed: <?php echo $speed ?>
+            });
+        });
+    });
+</script>

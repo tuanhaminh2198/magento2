@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="shippingAdditional" xsi:type="array">
+                                                            <item name="component" xsi:type="string">uiComponent</item>
+                                                            <item name="displayArea" xsi:type="string">shippingAdditional</item>
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="additional_block" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Dev_ShippingExpress/js/view/checkout/shipping/additional-fields</item>
+                                                                </item>
+                                                            </item>
+                                                            <item name="validation" xsi:type="array">
+                                                                <item name="max_text_length" xsi:type="number">9</item>
+                                                                <item name="validate-number" xsi:type="boolean">true</item>
+                                                                <item name="number-only" xsi:type="boolean">true</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="totals" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="donate" xsi:type="array">
+                                                            <item name="component" xsi:type="string">Dev_ShippingExpress/js/view/checkout/summary/donate</item>
+                                                            <item name="sortOrder" xsi:type="string">20</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="template" xsi:type="string">Dev_ShippingExpress/checkout/summary/donate</item>
+                                                                <item name="title" xsi:type="string" translate="true">Donate</item>
+                                                            </item>
+                                                        </item>
+<!--                                                        <item name="remove" xsi:type="array">-->
+<!--                                                            <item name="component" xsi:type="string">Dev_ShippingExpress/js/view/remove</item>-->
+<!--                                                            <item name="displayArea" xsi:type="string">summary</item>-->
+<!--                                                            <item name="config" xsi:type="array">-->
+<!--                                                                <item name="template" xsi:type="string">Dev_ShippingExpress/remove</item>-->
+<!--                                                            </item>-->
+<!--                                                        </item>-->
+                                                    </item>
+                                                </item>
+                                                <item name="cart_items" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="details" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="subtotal" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_Tax/js/view/checkout/summary/item/details/subtotal</item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

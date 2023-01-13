@@ -1,0 +1,29 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="expert">
+        <column xsi:type="int" name="expert_id" identity="true" unsigned="true" nullable="false" comment="expert_id"/>
+        <column xsi:type="varchar" name="name"  comment="name"/>
+        <column xsi:type="varchar" name="position" length="255" comment="position"/>
+        <column xsi:type="varchar" name="work_unit"  length="255" comment="work_unit"/>
+        <column xsi:type="varchar" name="image"  length="255" comment="image"/>
+        <column xsi:type="varchar" name="image_url"  length="255" comment="image_url"/>
+        <column xsi:type="varchar" name="image_name"  length="255" comment="image_name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="expert_id"/>
+        </constraint>
+        <index referenceId="expert_name_position" indexType="fulltext">
+            <column name="name"/>
+            <column name="position"/>
+        </index>
+    </table>
+    <table name="expert_review">
+        <column xsi:type="int" name="expert_review_id" identity="true" unsigned="true" nullable="false" comment="expert_review_id"/>
+        <column xsi:type="varchar" name="reviewer"  comment="reviewer"/>
+        <column xsi:type="text" name="review_title"  comment="review_title"/>
+        <column xsi:type="varchar" name="review_detail"  length="255" comment="review_detail"/>
+        <column xsi:type="varchar" name="review_video"  length="255" comment="review_video"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="expert_review_id"/>
+        </constraint>
+    </table>
+</schema>

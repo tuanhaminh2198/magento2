@@ -1,0 +1,15 @@
+<!-- ko if: checkValue() -->
+<tr class="totals donate excl"  id="remove_place">
+    <th class="mark" scope="row">
+ <span class="label" data-bind="text: title">
+</span>
+        <span class="value" data-bind="text: getValue()">
+</span>
+    </th>
+    <td class="amount">
+        <button class="action primary" data-bind="click: removeButton">Remove</button>
+ <span class="price" data-bind="text: getValue(), attr: {'data-th': title}" >
+ </span>
+    </td>
+</tr>
+<!-- /ko -->

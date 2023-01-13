@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dev_ProductContent::home" title="Product Content" module="Dev_ProductContent" sortOrder="1008" parent="Magento_Backend::content_elements" resource="Magento_Cms::page" action="productcontent/post"/>
+    </menu>
+</config>

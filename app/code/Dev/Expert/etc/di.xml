@@ -1,0 +1,40 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="expert_post_listing_data_source" xsi:type="string">Dev\Expert\Model\ResourceModel\Post\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Dev\Expert\Model\ResourceModel\Post\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">expert</argument>
+            <argument name="resourceModel" xsi:type="string">Dev\Expert\Model\ResourceModel\Post</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="expert_review_post_listing_data_source" xsi:type="string">Dev\Expert\Model\ResourceModel\ExpertReview\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Dev\Expert\Model\ResourceModel\ExpertReview\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">expert_review</argument>
+            <argument name="resourceModel" xsi:type="string">Dev\Expert\Model\ResourceModel\ExpertReview</argument>
+        </arguments>
+    </virtualType>
+    <type name="Dev\Expert\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">expert/tmp/image</argument>
+            <argument name="basePath" xsi:type="string">expert/image</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="png" xsi:type="string">png</item>
+                <item name="gif" xsi:type="string">gif</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
