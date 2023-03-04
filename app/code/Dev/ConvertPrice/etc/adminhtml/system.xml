@@ -1,0 +1,34 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="convert_price" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Convert Price</label>
+            <tab>catalog</tab>
+            <resource>Convert_Price::config_convert_price</resource>
+            <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Setting</label>
+
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_decimal" translate="label" type="select" sortOrder="20" showInDefault="1" canRestore="1">
+                    <label>Show Decimal</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="convert_price/general/enable">1</field>
+                    </depends>
+                </field>
+
+                <field id="decimal_length" translate="label" type="text" sortOrder="1" showInDefault="1" canRestore="1">
+                    <label>Precision</label>
+                    <comment> Please enter the number between 1 to 3 </comment>
+                    <validate> required-entry validate-number-range number-range-1-3</validate>
+                    <depends>
+                        <field id="convert_price/general/show_decimal">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

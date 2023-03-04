@@ -2,11 +2,11 @@
 <!--    hoac them widget trong page buider cua home page-->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="main.content" >
-            <container name="cms.view.bottomwidget" htmlTag="div"  after="-" >
-                <block class="Dev\Banner\Block\BottomBannerWidget" name="banner.bottomwidget" template="widget/bottomwidget.phtml"/>
-            </container>
-        </referenceContainer>
+<!--        <referenceContainer name="main.content" >-->
+<!--            <container name="cms.view.bottomwidget" htmlTag="div"  after="-" >-->
+<!--                <block class="Dev\Banner\Block\BottomBannerWidget" name="banner.bottomwidget" template="widget/bottomwidget.phtml"/>-->
+<!--            </container>-->
+<!--        </referenceContainer>-->
         <referenceContainer name="page.main.title">
             <container name="cms.view.topwidget"  after="-" >
                 <block class="Dev\Banner\Block\TopBannerWidget"   name="banner.widget" template="widget/widget.phtml"/>

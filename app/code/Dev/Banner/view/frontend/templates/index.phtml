@@ -1,7 +1,9 @@
-<?php/**
+<?php
+/**
  * @var \Magento\Store\Model\StoreManagerInterface
  * @var \Dev\Banner\Block\Index $block
-*/?>
+*/
+?>
 
 <?= $block -> getTitle();?>
 <h2 class="table_main">Bảng dữ liệu </h2>
@@ -32,20 +34,21 @@
         <th class="post-image">Image </th>
         <th class="post-status">Status </th>
         <th class="post-short_description">Short Description </th>
-        <th class="post-short_description">DELETE</th>
+<!--        <th class="post-short_description">DELETE</th>-->
 
     </tr>
     <?php foreach ($block->getPostCollection() as $key=>$post) :?>
-        <?php
-                        $image = $this->getUrl(
-                                \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
-                            ) . "banner/tmp/image/" . json_decode($post['image'],true)[0]['name'];
-        ?>
+<!--        --><?php
+//                        $image = $this->getUrl(
+//                                \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
+//                            ) . "banner/tmp/image/" . json_decode($post['image'],true)[0]['name'];
+//                        var_dump($image);
+//        ?>
         <tr>
             <td><?= $post->getBannerId();?></td>
             <td><?= $post->getName();?></td>
             <td><?= $post->getDescription();?></td>
-            <td>  <img width="50px" height="50px" src="<?php echo $image; ?>" alt="Demo"></td>
+<!--            <td>  <img width="50px" height="50px" src="--><?php //echo $image; ?><!--" alt="Demo"></td>-->
             <td><?= $post->getStatus();?></td>
             <td><?= $post->getShort_description();?>
             </td>
